@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 11:35 PM
+-- Generation Time: Nov 18, 2023 at 02:03 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -39,7 +39,8 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `username`, `password`, `status`) VALUES
-(1, 'admin', 'admin', 'Active now');
+(1, 'admin', 'admin', 'Active now'),
+(4, 'admin1', 'admin1', 'Offline now');
 
 -- --------------------------------------------------------
 
@@ -130,11 +131,15 @@ INSERT INTO `location` (`location_id`, `location_name`, `latitude`, `longitude`)
 (17591, 'Nha Trang', 0.00000000, 0.00000000),
 (18541, 'Hà Nội', 0.00000000, 0.00000000),
 (18639, 'Cam Ranh', 0.00000000, 0.00000000),
+(22296, 'Đà Nẵng', 16.06800000, 108.21200000),
 (25577, 'Đà Nẵng', 16.06800000, 108.21200000),
+(31442, 'Hà Nội', 21.02833340, 105.85404100),
+(32732, 'Hạ Long', 20.95283650, 107.08000030),
 (40365, 'Quảng Ngãi', 14.99537390, 108.69172900),
 (40761, 'Nha Trang', 12.24316930, 109.18986750),
 (46276, 'Đà Nẵng', 16.06800000, 108.21200000),
 (70811, 'Nha Trang', 12.24316930, 109.18986750),
+(72839, 'Cà Mau', 9.01801770, 105.08697240),
 (91476, 'Nha Trang', 12.24316930, 109.18986750),
 (95635, 'Quảng Ngãi', 14.99537390, 108.69172900);
 
@@ -181,10 +186,8 @@ INSERT INTO `message` (`message_id`, `sender_id`, `receiver_id`, `message_conten
 (19, 15, 18, 'asdasdasd', '0000-00-00 00:00:00'),
 (20, 15, 18, 'sadasd', '1970-01-01 01:00:00'),
 (21, 15, 18, 'asasuke098', '2023-11-15 17:56:00'),
-(22, 18, 13, 'sadasdasd', '2023-11-15 17:57:00'),
 (23, 18, 15, 'f', '2023-11-15 19:19:00'),
-(24, 18, 14, 'f', '2023-11-15 19:19:00'),
-(25, 18, 13, 'f', '2023-11-15 19:19:00');
+(24, 18, 14, 'f', '2023-11-15 19:19:00');
 
 -- --------------------------------------------------------
 
@@ -235,8 +238,8 @@ CREATE TABLE `premiummembership` (
 
 INSERT INTO `premiummembership` (`premium_id`, `name_package`, `benifit`, `cost`, `start_date`, `end_date`) VALUES
 (1, 'Free', 'Use Free', 0, '0000-00-00', '0000-00-00'),
-(2, '1 Month', 'Can click go back', 99.999, '0000-00-00', '0000-00-00'),
-(3, '6 Month', 'Can click go back', 399.999, '0000-00-00', '0000-00-00'),
+(2, 'Golden', 'Can click go back', 99.999, '0000-00-00', '0000-00-00'),
+(3, 'Premium', 'Can click go back', 399.999, '0000-00-00', '0000-00-00'),
 (4, '12 Month', 'Can click go back', 999.999, '0000-00-00', '0000-00-00');
 
 -- --------------------------------------------------------
@@ -282,7 +285,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `fullname`, `username`, `email`, `password_hash`, `registration_date`, `bio`, `image`, `location_id`, `dob`, `gender`, `last_login`, `is_premium`, `user_info_id`, `likes`, `dislikes`, `status`) VALUES
-(13, 'Võ Nhật Huy', 'hades', 'hades@gmail.com', '123', '2023-11-12 17:00:00', NULL, NULL, 10514, '1999-10-11 17:00:00', ' 0', '2023-11-12 23:41:14', 1, 10004, 0, 0, 'Offline now'),
 (14, 'test', 'test', 'a@gmail.com', '113', '2023-11-12 17:00:00', NULL, 'Profile-test.jpg', 17591, '2007-09-30 17:00:00', ' 0', '2023-11-12 23:44:56', 1, 10003, 1, 0, 'Offline now'),
 (15, 'vinh', 'duck', 'duck@gmail.com', '123', '2023-11-12 17:00:00', 'I\'m wibu', 'Profile-duck.jpg', 11104, '2002-07-31 17:00:00', ' 0', '2023-11-12 23:47:07', 1, 10002, 0, 1, 'Offline now'),
 (18, 'Linh', 'linh1', 'linh@yahoo.com', '111', '2023-11-12 17:00:00', 'aaaaaaaaa', 'Profile-linh1.jpg', 16518, '2001-06-09 17:00:00', ' 1', '0000-00-00 00:00:00', 1, 10001, 14, 1, 'Offline now'),
@@ -292,7 +294,11 @@ INSERT INTO `users` (`user_id`, `fullname`, `username`, `email`, `password_hash`
 (23, 'user4', 'user4', 'a@gmail.com', '$2y$12$CfcYIHhR0oImUqzSYaw0dOWP8HpKQ7p7VD9.hrUyEvzN3e51q3TPu', '0000-00-00 00:00:00', NULL, NULL, 12010, '0000-00-00 00:00:00', ' 0', '0000-00-00 00:00:00', 1, 93941, 0, 0, 'Offline now'),
 (24, 'user5', 'user5', 'a@gmail.com', '$2y$12$pCmAvKl2z.b2aFsSldzHBewHQAb01Xe7pof0H6LLHQw/z9wGGeWku', '2023-11-16 17:00:00', NULL, NULL, 70811, '0000-00-00 00:00:00', ' 0', '0000-00-00 00:00:00', 1, 75143, 0, 0, 'Offline now'),
 (25, 'user6', 'user6', 'a@gmail.com', '$2y$12$uI7VWzZrCob.LkU6Nm4cc.mvhcPI9ThbW7KMKhAVBiayCvoB.WWSi', '0000-00-00 00:00:00', NULL, NULL, 91476, '0000-00-00 00:00:00', ' 0', '0000-00-00 00:00:00', 1, 83596, 0, 0, 'Offline now'),
-(26, 'Phạm Huỳnh Đức Vinh', 'user7', 'abbbbb@gmail.com', '$2y$12$Dy044UoCGi1gY75V.UgHR.cWba9TlBqffUiJCbJBt0Ijpn3Mu0F9q', '2023-11-16 17:00:00', '', 'Profile-user7.jpg', 40761, '0000-00-00 00:00:00', 'null', '0000-00-00 00:00:00', 1, 89283, 0, 0, 'Offline now');
+(26, 'Phạm Huỳnh Đức Vinh', 'user7', 'abbbbb@gmail.com', '$2y$12$Dy044UoCGi1gY75V.UgHR.cWba9TlBqffUiJCbJBt0Ijpn3Mu0F9q', '2023-11-16 17:00:00', '', 'Profile-user7.jpg', 40761, '0000-00-00 00:00:00', 'null', '0000-00-00 00:00:00', 1, 89283, 0, 0, 'Offline now'),
+(27, 'Trúc', 'truc123', 'truc@gmail.com', '$2y$12$B6SL.zGoDEmmKhMkYIx.OuIwS8PRLsK9npOdaoJ1b7Jx3PwS7iZrO', '2023-11-17 17:00:00', NULL, NULL, 22296, '2009-12-22 17:00:00', ' 1', '2023-11-18 12:22:26', 1, 83481, 0, 0, 'Offline now'),
+(28, 'bong', 'bong1', 'abc@gmail.com', '$2y$12$XNIry5IULr80YT9rS8MYheAvwlJGoHXeeZOfligCwZCLncAnrEsIC', '2023-11-17 17:00:00', NULL, NULL, 31442, '1999-02-20 17:00:00', ' 2', '2023-11-18 12:24:08', 1, 76480, 0, 0, 'Offline now'),
+(29, 'Trức Thú', 'Thy', 'thu@gmail.com', '$2y$12$plRpL.5B1hqWz6oIbE4i6.743px9.8JbEXkexdDT19rUTsxIQQGB6', '2023-11-17 17:00:00', NULL, NULL, 72839, '2002-02-21 17:00:00', ' 1', '2023-11-18 12:26:47', 1, 49030, 0, 0, 'Offline now'),
+(30, 'Long', 'long32', 'abc@gmail.com', '$2y$12$FNwThtVDYMcN6.nXhiINxuTjybVY7j/fI/b0SRZa2wR/Ob648dcCK', '2023-11-17 17:00:00', NULL, NULL, 32732, '2002-12-21 17:00:00', ' 0', '2023-11-18 12:35:15', 1, 86164, 0, 0, 'Offline now');
 
 -- --------------------------------------------------------
 
@@ -453,7 +459,7 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `album`
@@ -519,7 +525,7 @@ ALTER TABLE `usercategory`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `usersettings`

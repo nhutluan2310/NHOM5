@@ -215,7 +215,7 @@ if (!isset($_SESSION['user_id'])) {
                                     </div>
                                 </div>
                                 <div class="card m-3">
-                                    <div class="card-header"> <span class="float-right"> <a class="lw-icon-btn" href="" role="button" id="lwEditUserLocation"> <i class="fa fa-pencil-alt"></i> </a> <a class="lw-icon-btn" href="" role="button" id="lwCloseLocationBlock" style="display: none;"> <i class="fa fa-times"></i> </a> </span>
+                                    <div class="card-header"> <span class="float-right"> 
                                         <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
                                     </div>
                                     <div class="card-body">
@@ -277,62 +277,6 @@ if (!isset($_SESSION['user_id'])) {
 
                                     </div>
                                 </div>
-                                <!-- <div class="card mb-3">
-                                    <div class="card-header"> <span class="float-right">
-                                            <h5><i class="far fa-heart text-danger"></i> Favorites</h5>
-                                    </div>
-                                    <div class="card-body">
-                                        <div id="lwfavoritesStaticContainer">
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Music Genre</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.music_genre"> </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Singer</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.singer"> </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Song</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.song"> </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Hobby</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.hobby"> </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Sport</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.sport"> </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Book</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.book"> </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Dish</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.dish"> </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Color</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.color"> </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Movie</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.movie"> </div>
-                                                </div>
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Show</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.show"> </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <div class="col-sm-6 mb-3 mb-sm-0"> <label><strong>Inspired From</strong></label>
-                                                    <div class="lw-inline-edit-text" data-model="specificationData.inspired_from"> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div> -->
-
                             <?php } ?>
                             </div>
                     </div>
