@@ -1322,21 +1322,17 @@ if (!isset($_SESSION['user_id'])) {
                                     <?php } else if ($numRow <> 0) {
                                     echo '<div class="row text-center md-3 me-3 mb-3 card1">';
                                     $user_id =  $_SESSION['user_id'];
-                                    while ($rows = mysqli_fetch_array($result)) { ?>
+                                    while ($rows = mysqli_fetch_array($result)) { 
+                                        $user_id1= $rows['user_id']?>
                                         <div class="col-md-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                             <div class="team-style07">
                                                 <div class="team-thumb mb-1-9">
                                                     <div class="thumb"><img src="<?php if ($rows['image'] == null) echo SITEURL . "Assets/images/d-avatar.jpg";
                                                                                     else echo SITEURL . "Assets/images/profile/" . $rows['image']; ?>" class="rounded-circle" alt="..."></div>
                                                     <div class="team-social">
-                                                        <ul class="styled-icons">
-                                                            <li><a class="styled-icons-item" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a class="styled-icons-item" href="#!"><i class="fab fa-user"></i></a></li>
-                                                            <li><a class="styled-icons-item" href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                                        </ul>
                                                     </div>
                                                 </div>
-                                                <h3 class="h5 mb-1"><a href="<?php echo SITEURL . "profile?user_id=" . $user_id; ?>"><?php echo $rows['fullname'] ?></a></h3>
+                                                <h3 class="h5 mb-1"><a href="<?php echo SITEURL . "profile.php?user_id=" . $user_id1; ?>"><?php echo $rows['fullname'] ?></a></h3>
                                                 <p class="mb-0"><?php $timestamp = strtotime($rows['dob']);
                                                                 $now = date("Y", time());
                                                                 // Convert the timestamp to a formatted date
@@ -1377,24 +1373,19 @@ if (!isset($_SESSION['user_id'])) {
                                             </div>
                                         </div><!--end col-->
                                     </div><!--end row-->
-                                    <?php } else if ($numRow <> 0) {
+                                    <?php } else if ($numRow > 0) {
                                     echo '<div class="row text-center md-3 me-3 mb-3 card1">';
                                     $user_id =  $_SESSION['user_id'];
-                                    while ($rows = mysqli_fetch_array($result)) { ?>
+                                    while ($rows = mysqli_fetch_array($result)) {
+                                        $user_id1= $rows['user_id']; ?>
                                         <div class="col-md-6 col-xl-3 mt-1-9 wow fadeInUp" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInUp;">
                                             <div class="team-style07">
                                                 <div class="team-thumb mb-1-9">
                                                     <div class="thumb"><img src="<?php if ($rows['image'] == null) echo SITEURL . "Assets/images/d-avatar.jpg";
                                                                                     else echo SITEURL . "Assets/images/profile/" . $rows['image']; ?>" class="rounded-circle" alt="..."></div>
-                                                    <div class="team-social">
-                                                        <ul class="styled-icons">
-                                                            <li><a class="styled-icons-item" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a class="styled-icons-item" href="#!"><i class="fab fa-user"></i></a></li>
-                                                            <li><a class="styled-icons-item" href="#!"><i class="fab fa-linkedin-in"></i></a></li>
-                                                        </ul>
-                                                    </div>
+                                                    
                                                 </div>
-                                                <h3 class="h5 mb-1"><a href="<?php echo SITEURL . "profile?user_id=" . $user_id; ?>"><?php echo $rows['fullname'] ?></a></h3>
+                                                <h3 class="h5 mb-1"><a href="<?php echo SITEURL . "profile.php?user_id=1" . $user_id; ?>">a<?php echo $rows['fullname'] ?></a></h3>
                                                 <p class="mb-0"><?php $timestamp = strtotime($rows['dob']);
                                                                 $now = date("Y", time());
                                                                 // Convert the timestamp to a formatted date
